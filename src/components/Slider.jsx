@@ -18,7 +18,10 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
             <img src={Banner3} alt="" />
-        </SwiperSlide>
+        </SwiperSlide>  
+        <SwiperSlide>
+            <img src="https://api.escuelajs.co/api/v1/files/6dba.jpg" alt="" />
+        </SwiperSlide> 
       </Swiper>
     </div>
   );

@@ -4,7 +4,7 @@ import { IoSearch } from "react-icons/io5";
 
 const SearchComp = () => {
   return (
-    <div class="relative">
+    <div className="relative">
       <input
         type="search"
         id="default-search"

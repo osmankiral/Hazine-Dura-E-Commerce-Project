@@ -6,7 +6,7 @@ import Logo from '../../public/logo.png'
 const LogoComp = () => {
   return (
     <>
-      <img src={Logo} alt="" className="cursor-pointer" />
+      <img src={Logo} alt="" className="cursor-pointer h-16" />
     </>
   );
 };

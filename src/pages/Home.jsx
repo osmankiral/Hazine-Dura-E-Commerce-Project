@@ -4,6 +4,7 @@ import BestSeller from '../components/BestSeller';
 import Products from '../components/Products';
 import Footer from "../components/Footer";
 import Slider from '../components/Slider';
+import Categories from '../components/Categories';
 
 
 const Home = () => {
@@ -12,8 +13,8 @@ const Home = () => {
         <Header/>
         <Slider/>
         <BestSeller/>
+        <Categories/>
         <Products/>
-        <Footer/>
     </>
   )
 }
