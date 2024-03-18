@@ -10,11 +10,15 @@ import Categories from '../components/Categories';
 const Home = () => {
   return (
     <>
-        <Header/>
+    <div className='max-w-7xl mx-auto'>
+    <Header/>
         <Slider/>
         <BestSeller/>
         <Categories/>
         <Products/>
+    </div>
+        
+        <Footer />
     </>
   )
 }

@@ -9,95 +9,37 @@ const BestSeller = () => {
     const fetchBestSeller = async () => {
       try {
         const response = await axios.get(
-          "https://api.escuelajs.co/api/v1/products"
+          "http://localhost:5000/api/products"
         );
         setBestSeller(response.data);
+        console.log(bestSeller)
       } catch (error) {
         console.log(error);
       }
     };
     fetchBestSeller();
   }, []);
-console.log(bestSeller[0]?.title)
-const MAX_LENGTH = 30;
+
+  const MAX_LENGTH = 18;
   return (
     <div className="my-5">
-      <h1 className="text-2xl mb-2">Best Sellers</h1>
+      <h1 className="text-2xl mb-2">En Çok Satanlar</h1>
       <div className="grid grid-cols-12 gap-5 bg-white justify-between">
+        {bestSeller.slice(0,6).map((product) => (
           <div className="col-span-2 w-46 h-84 p-3 border cursor-pointer">
-            <img
-              className=" h-60 mx-auto"
-              src={bestSeller[7]?.images}
-              alt=""
-            />
-            <h1 className="text-sm text-gray-700 p-1">{`${bestSeller[7]?.title.substring(0, MAX_LENGTH)}...`}</h1>
+            <img className=" h-60 mx-auto " src={product.img} alt="" />
+            <hr />
+            <h1 className="text-sm text-gray-700 p-1 hover:text-orange-500">{`${product.name.substring(
+              0,
+              MAX_LENGTH
+            )}...`}</h1>
             <div className="flex mt-2 justify-between mx-3">
-              <h1 className="text-orange-500 ">{bestSeller[7]?.price} $</h1>
-              <CiHeart size={24} className="hover:text-orange-500" />
-            </div>
-          </div>    
-          <div className="col-span-2 w-46 h-84 p-3 border cursor-pointer">
-            <img
-              className=" h-60 mx-auto"
-              src={bestSeller[14]?.images}
-              alt=""
-            />
-            <h1 className="text-sm text-gray-700 p-1">{`${bestSeller[14]?.title.substring(0, MAX_LENGTH)}...`}</h1>
-            <div className="flex mt-2 justify-between mx-3">
-              <h1 className="text-orange-500 ">{bestSeller[14]?.price} $</h1>
-              <CiHeart size={24} className="hover:text-orange-500" />
-            </div>
-          </div>   
-          <div className="col-span-2 w-46 h-84 p-3 border cursor-pointer">
-            <img
-              className=" h-60 mx-auto"
-              src={bestSeller[18]?.images}
-              alt=""
-            />
-            <h1 className="text-sm text-gray-700 p-1">{`${bestSeller[18]?.title.substring(0, MAX_LENGTH)}...`}</h1>
-            <div className="flex mt-2 justify-between mx-3">
-              <h1 className="text-orange-500 ">{bestSeller[18]?.price} $</h1>
-              <CiHeart size={24} className="hover:text-orange-500" />
-            </div>
-          </div>  
-          <div className="col-span-2 w-46 h-84 p-3 border cursor-pointer">
-            <img
-              className=" h-60 mx-auto"
-              src={bestSeller[22]?.images}
-              alt=""
-            />
-            <h1 className="text-sm text-gray-700 p-1">{`${bestSeller[22]?.title.substring(0, MAX_LENGTH)}...`}</h1>
-            <div className="flex mt-2 justify-between mx-3">
-              <h1 className="text-orange-500 ">{bestSeller[22]?.price} $</h1>
+              <h1 className="text-orange-500 ">{product.price} TL</h1>
               <CiHeart size={24} className="hover:text-orange-500" />
             </div>
           </div>
-          <div className="col-span-2 w-46 h-84 p-3 border cursor-pointer">
-            <img
-              className=" h-60 mx-auto"
-              src={bestSeller[34]?.images}
-              alt=""
-            />
-            <h1 className="text-sm text-gray-700 p-1">{`${bestSeller[34]?.title.substring(0, MAX_LENGTH)}...`}</h1>
-            <div className="flex mt-2 justify-between mx-3">
-              <h1 className="text-orange-500 ">{bestSeller[34]?.price} $</h1>
-              <CiHeart size={24} className="hover:text-orange-500" />
-            </div>
-          </div>
-          <div className="col-span-2 w-46 h-84 p-3 border cursor-pointer">
-            <img
-              className=" h-60 mx-auto"
-              src={bestSeller[39]?.images}
-              alt=""
-            />
-            <h1 className="text-sm text-gray-700 p-1">{`${bestSeller[39]?.title.substring(0, MAX_LENGTH)}...`}</h1>
-            <div className="flex mt-2 justify-between mx-3">
-              <h1 className="text-orange-500 ">{bestSeller[39]?.price} $</h1>
-              <CiHeart size={24} className="hover:text-orange-500" />
-            </div>
-          </div>   
+        ))}
       </div>
-      
     </div>
   );
 };

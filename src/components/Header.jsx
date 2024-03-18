@@ -14,9 +14,10 @@ const Header = () => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "https://api.escuelajs.co/api/v1/categories"
+          "http://localhost:5000/api/categories"
         );
         setCategories(response.data);
+        console.log(categories);
       } catch (error) {
         console.log(error);
       }
@@ -36,15 +37,15 @@ const Header = () => {
         <div className="col-span-3 my-auto flex gap-5 right-0">
           <div className="flex cursor-pointer hover:text-orange-500 ">
             <CiUser size={28} />
-            <h1 className="text-sm my-auto">Login</h1>
+            <h1 className="text-sm my-auto">Giriş</h1>
           </div>
           <div className="flex cursor-pointer hover:text-orange-500 ">
             <CiHeart size={28} />
-            <h1 className="text-sm my-auto">Favorites</h1>
+            <h1 className="text-sm my-auto">Favoriler</h1>
           </div>
           <div className="flex cursor-pointer hover:text-orange-500 ">
             <CiShoppingCart size={30} />
-            <h1 className="text-sm my-auto">Cart</h1>
+            <h1 className="text-sm my-auto">Sepet</h1>
           </div>
         </div>
       </div>
@@ -69,7 +70,7 @@ const Header = () => {
         <nav className="nav text-md mx-auto">
           <ul className="flex items-center justify-center">
             {categories?.map((category)=>(
-              <li key={category.id} className="p-3 border-b-2 border-[#ff914d] border-opacity-0 hover:border-opacity-100 hover:text-[#ff914d] duration-200 cursor-pointer active">
+              <li  className="p-3 border-b-2 border-[#ff914d] border-opacity-0 hover:border-opacity-100 hover:text-[#ff914d] duration-200 cursor-pointer active">
               <a >{category?.name[0].toUpperCase()+ category?.name.slice(1)}</a>
             </li>
             ))}
