@@ -10,6 +10,8 @@ import AdminCreateProduct from "./components/AdminPanel/ProductComponents/AdminC
 import AdminUserList from "./components/AdminPanel/UserList/AdminUserList";
 import AdminUpdateCategory from "./components/AdminPanel/CategoryComponents/AdminUpdateCategory";
 import AdminUpdateProducts from "./components/AdminPanel/ProductComponents/AdminUpdateProducts";
+import ProductPage from "./pages/ProductPage";
+import Header from "./components/Header";
 
 function App() {
   return (
@@ -24,17 +26,31 @@ function App() {
               </div>
             }
           />
-          <Route path="/admin" element={<AdminHome />} >
+
+          <Route path="/product/:id" element={<ProductPage />} />
+
+          <Route path="/admin" element={<AdminHome />}>
             <Route path="/admin/categories" element={<AdminAllCategory />} />
-            <Route path="/admin/categories/create" element={<AdminCreateCategory />} />
-            <Route path="/admin/categories/update/:id" element={<AdminUpdateCategory />} />
+            <Route
+              path="/admin/categories/create"
+              element={<AdminCreateCategory />}
+            />
+            <Route
+              path="/admin/categories/update/:id"
+              element={<AdminUpdateCategory />}
+            />
             <Route path="/admin/products" element={<AdminAllProducts />} />
-            <Route path="/admin/products/create" element={<AdminCreateProduct />} />
-            <Route path="/admin/products/update/:id" element={<AdminUpdateProducts />} />
+            <Route
+              path="/admin/products/create"
+              element={<AdminCreateProduct />}
+            />
+            <Route
+              path="/admin/products/update/:id"
+              element={<AdminUpdateProducts />}
+            />
             <Route path="/admin/users" element={<AdminUserList />} />
           </Route>
         </Routes>
-        
       </BrowserRouter>
     </>
   );

@@ -24,7 +24,7 @@ const Categories = () => {
       </div>
       <div className="grid grid-cols-12 gap-5">
         {categories?.map((category) => (
-          <div className="col-span-2 text-center  hover:text-orange-500 cursor-pointer hover:border-orange-500 hover:scale-105 duration-500 ">
+          <div key={category._id} className="col-span-6 sm:col-span-3 md:col-span-2 text-center  hover:text-orange-500 cursor-pointer hover:border-orange-500 hover:scale-105 duration-500 ">
             <img src={category?.img} className="hover:scale-105 duration-500 rounded-t-md border h-52 mx-auto"/>
             <h1 className="px-auto text-2xl border">{category?.name[0].toUpperCase()+ category?.name.slice(1)}</h1>
           </div>
