@@ -11,7 +11,6 @@ import AdminUserList from "./components/AdminPanel/UserList/AdminUserList";
 import AdminUpdateCategory from "./components/AdminPanel/CategoryComponents/AdminUpdateCategory";
 import AdminUpdateProducts from "./components/AdminPanel/ProductComponents/AdminUpdateProducts";
 import ProductPage from "./pages/ProductPage";
-import Header from "./components/Header";
 import LoginPage from "./pages/LoginPage";
 
 function App() {
