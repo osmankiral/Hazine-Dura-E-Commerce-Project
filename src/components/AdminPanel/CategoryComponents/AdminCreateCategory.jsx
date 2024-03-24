@@ -17,7 +17,9 @@ const AdminCreateCategory = () => {
       );
       console.log(values);
       window.location.replace("http://localhost:5173/admin/categories");
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (

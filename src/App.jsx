@@ -12,21 +12,23 @@ import AdminUpdateCategory from "./components/AdminPanel/CategoryComponents/Admi
 import AdminUpdateProducts from "./components/AdminPanel/ProductComponents/AdminUpdateProducts";
 import ProductPage from "./pages/ProductPage";
 import Header from "./components/Header";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
-    <>
-      <BrowserRouter className="font-abc">
+    <div className="font-abc">
+      <BrowserRouter >
         <Routes>
           <Route
             path="/"
             element={
-              <div className="font-abc mt-5">
+              <div className="mt-5">
                 <Home />
               </div>
             }
           />
-
+        
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/product/:id" element={<ProductPage />} />
 
           <Route path="/admin" element={<AdminHome />}>
@@ -52,7 +54,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
